@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -125,7 +126,7 @@ h6, .h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 abbr[title],
@@ -12429,8 +12430,26 @@ ul {
   padding-right: 0.75rem;
 }
 
+.mt-10 {
+  margin-top: 192px;
+}
+
 .text-noto {
   font-family: 'Noto Sans TC', sans-serif;
+}
+
+.text-paytone {
+  font-family: 'Paytone One', sans-serif;
+}
+
+.text-vertical {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+}
+
+.bg-opacity {
+  opacity: .8;
 }
 
 .headerSearch {
@@ -12513,8 +12532,205 @@ ul {
   }
 }
 
-.headerSearch {
-  min-width: 220px;
+.triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /*  三角形  */
+  width: 0;
+  height: 0;
+  border-right: 16px solid #E6553B;
+  border-top: 16px solid transparent;
+  z-index: -1;
+}
+
+.btn-outline-dark:hover, .btn:hover {
+  background-color: #E6553B;
+  color: #F0F0F0 !important;
+}
+
+.btn-outline-dark:hover .triangle, .btn:hover .triangle {
+  border-right-color: #000;
+  z-index: 1;
+}
+
+.ranking {
+  width: 64px;
+  z-index: 1;
+}
+
+.rankImg {
+  cursor: pointer;
+}
+
+.rankImg img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+  height: 375px;
+  width: 100%;
+}
+
+.rankImg .detailBtn {
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.rankImg .detailBtn .triangle {
+  /*  三角形  */
+  width: 0;
+  height: 0;
+  border-right: 16px solid #E6553B;
+  border-top: 16px solid transparent;
+  z-index: 1;
+}
+
+.rankImg:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.7;
+}
+
+.rankImg:hover .detailBtn {
+  opacity: 1;
+  background-color: #E6553B;
+  color: #FFFFFF !important;
+  z-index: 10;
+}
+
+.rankImg:hover .triangle {
+  border-right-color: #000;
+}
+
+.rankImgSmall {
+  width: 120px;
+  height: 102px;
+  background-image: url(../images/art13.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.rankImgSmall .triangle {
+  /*  三角形  */
+  width: 0;
+  height: 0;
+  border-right: 16px solid transparent;
+  border-top: 16px solid transparent;
+}
+
+.rankImgSmall:hover::after {
+  content: 'more';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.7;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.rankImgSmall:hover .triangle {
+  border-right-color: #E6553B;
+  z-index: 1;
+}
+
+.rankItemSmall .bg-1 {
+  background-image: url(../images/art04.jpg);
+}
+
+.rankItemSmall .bg-2 {
+  background-image: url(../images/art05.jpg);
+}
+
+.rankItemSmall .bg-3 {
+  background-image: url(../images/art06.jpg);
+}
+
+.rankItemSmall .bg-5 {
+  background-image: url(../images/art07.jpg);
+}
+
+.rankItemSmall .bg-6 {
+  background-image: url(../images/art08.jpg);
+}
+
+.aritsitItem {
+  background-image: url(../images/artist01.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.aritsitItem .detailBtn .triangle {
+  /*  三角形  */
+  z-index: 5;
+}
+
+.artistSwiper .swiper-slide-active, .artistSwiper .swiper-slide-prev, .artistSwiper .swiper-slide-next {
+  height: 465px;
+}
+
+.artistSwiper .detailIntro {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .artistSwiper .detailIntro {
+    width: 255px;
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  .artistSwiper .artistInfo {
+    display: none;
+  }
+  .artistSwiper .artistInfo .detailIntro {
+    width: 304px;
+  }
+  .artistSwiper .swiper-slide-active {
+    width: 636px !important;
+    height: 439px !important;
+  }
+  .artistSwiper .swiper-slide-active .artistInfo {
+    display: block;
+  }
+  .artistSwiper .swiper-slide-prev, .artistSwiper .swiper-slide-next {
+    width: 306px !important;
+    height: 262px !important;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+  }
+}
+
+.artistBg-2 {
+  background-image: url(../images/artist02.jpg);
+}
+
+.artistBg-3 {
+  background-image: url(../images/artist03.jpg);
+}
+
+.artistBg-4 {
+  background-image: url(../images/artist04.jpg);
 }
 
 /*# sourceMappingURL=all.css.map */
